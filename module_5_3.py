@@ -15,37 +15,37 @@ class House:
 
     def __eq__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors == other.number_of_floors
+            return self.number_of_floors == other
         elif isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
 
     def __lt__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors < other.number_of_floors
+            return self.number_of_floors < other
         elif isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
 
     def __le__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors <= other.number_of_floors
+            return self.number_of_floors <= other
         elif isinstance(other, House):
             return self.number_of_floors <= other.number_of_floors
 
     def __gt__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors > other.number_of_floors
+            return self.number_of_floors > other
         elif isinstance(other, House):
             return self.number_of_floors > other.number_of_floors
 
     def __ge__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors >= other.number_of_floors
+            return self.number_of_floors >= other
         elif isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
 
     def __ne__(self, other):
         if isinstance(other, int):
-            return self.number_of_floors != other.number_of_floors
+            return self.number_of_floors != other
         elif isinstance(other, House):
             return self.number_of_floors != other.number_of_floors
 
@@ -55,13 +55,12 @@ class House:
             return self
 
     def __radd__(self, value):
-        self.number_of_floors += value
-        return self
+        if isinstance(value, int):
+            return self.__add__(value)
 
     def __iadd__(self, value):
         if isinstance(value, int):
-            self.number_of_floors += value
-            return self
+            return self.__add__(value)
 
 
 h1 = House('ЖК Эльбрус', 10)
