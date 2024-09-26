@@ -1,6 +1,3 @@
-import time
-
-
 class User:
     def __init__(self, nickname: str, password: int, age: int):
         self.nickname = nickname
